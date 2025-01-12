@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exploración Dinámica</title>
+</head>
+<body>
+    <h1>Exploración Dinámica</h1>
+    {% if errores %}
+        <ul style="color: red;">
+            {% for error in errores %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <form method="POST">
+        <label for="paso_trote">Paso y trote:</label>
+        <select name="paso_trote" id="paso_trote">
+            <option value="Normal">Normal</option>
+            <option value="Anormalidad">Anormalidad</option>
+        </select>
+        <br>
+
+        <label for="circulos">Círculos:</label>
+        <select name="circulos" id="circulos">
+            <option value="Sin elevación">Sin elevación</option>
+            <option value="Elevación significativa">Elevación significativa</option>
+        </select>
+        <br>
+
+        <label for="saltos_conejo">¿Saltos de conejo detectados?</label>
+        <select name="saltos_conejo" id="saltos_conejo">
+            <option value="No">No</option>
+            <option value="Sí">Sí</option>
+        </select>
+        <br>
+
+        <button type="submit">Siguiente</button>
+    </form>
+</body>
+</html>
