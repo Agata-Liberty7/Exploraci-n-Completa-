@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exploración Física</title>
+</head>
+<body>
+    <h1>Exploración Física</h1>
+    {% if errores %}
+        <ul style="color: red;">
+            {% for error in errores %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <form method="POST">
+        <label for="movilizacion">Movilización:</label>
+        <select name="movilizacion" id="movilizacion">
+            <option value="Normal">Normal</option>
+            <option value="Restricción severa">Restricción severa</option>
+        </select>
+        <br>
+        <label for="tono_muscular">Tono muscular:</label>
+        <select name="tono_muscular" id="tono_muscular">
+            <option value="Normal">Normal</option>
+            <option value="Hipotonía">Hipotonía</option>
+        </select>
+        <br>
+        <button type="submit">Siguiente</button>
+    </form>
+</body>
+</html>
