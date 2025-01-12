@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exploración de la Columna</title>
+</head>
+<body>
+    <h1>Exploración de la Columna</h1>
+    {% if errores %}
+        <ul style="color: red;">
+            {% for error in errores %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <form method="POST">
+        <label for="zona_columna">Zona de la columna:</label>
+        <select name="zona_columna" id="zona_columna">
+            <option value="Cervical">Cervical</option>
+            <option value="Torácico">Torácico</option>
+            <option value="Lumbar">Lumbar</option>
+            <option value="Sacro">Sacro</option>
+        </select>
+        <br>
+        <label for="dolor_columna">Dolor:</label>
+        <select name="dolor_columna" id="dolor_columna">
+            <option value="Sin dolor">Sin dolor</option>
+            <option value="Dolor leve">Dolor leve</option>
+            <option value="Dolor severo">Dolor severo</option>
+        </select>
+        <br>
+        <button type="submit">Finalizar</button>
+    </form>
+</body>
+</html>
