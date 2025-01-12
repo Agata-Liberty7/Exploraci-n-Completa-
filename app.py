@@ -8,17 +8,6 @@ from validacion import validar_datos
 from diagnostico import generar_hipotesis
 from recomendaciones import generar_recomendaciones
 
-@app.route('/')
-def index():
-    """Главная страница"""
-    return render_template('index.html')
-
-@app.route('/exploracion_funcional')
-def exploracion_funcional():
-    """Начальная страница для выбора типа осмотра"""
-    return render_template('exploracion_funcional.html')
-
-# Остальная часть кода (ваш пример) остаётся без изменений
 @app.route('/fisica', methods=['GET', 'POST'])
 def fisica():
     if request.method == 'POST':
@@ -50,6 +39,3 @@ def columna():
         recomendaciones = generar_recomendaciones(datos_columna)
         return render_template('resultados.html', hipotesis=hipotesis, recomendaciones=recomendaciones)
     return render_template('form_columna.html')
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
